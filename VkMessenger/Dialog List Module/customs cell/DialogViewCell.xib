@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="KohinoorBangla.ttc">
+            <string>KohinoorBangla-Semibold</string>
+        </array>
+        <array key="TimesNewRoman.ttf">
+            <string>TimesNewRomanPSMT</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="DialogViewCell" customModule="VkMessenger" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр Чернов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvU-QG-CkZ">
+                        <rect key="frame" x="104" y="19" width="133" height="20"/>
+                        <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Текст сообщения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCd-Bx-vBp">
+                        <rect key="frame" x="104" y="60.5" width="196" height="27.5"/>
+                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Rgp-kl-iMD">
+                        <rect key="frame" x="8" y="8" width="88" height="92"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="88" id="JGN-su-Cha"/>
+                            <constraint firstAttribute="height" constant="92" id="kZO-oq-8ic"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9sP-sY-yUi">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-Ru-wjL">
+                        <rect key="frame" x="212" y="4" width="24.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SvU-QG-CkZ" firstAttribute="top" secondItem="lBG-Ru-wjL" secondAttribute="bottom" constant="3" id="5jH-mw-PfU"/>
+                    <constraint firstAttribute="bottom" secondItem="Rgp-kl-iMD" secondAttribute="bottom" constant="10.5" id="7BH-lm-atm"/>
+                    <constraint firstAttribute="trailing" secondItem="jCd-Bx-vBp" secondAttribute="trailing" constant="20" id="CXk-y7-sNd"/>
+                    <constraint firstItem="jCd-Bx-vBp" firstAttribute="leading" secondItem="Rgp-kl-iMD" secondAttribute="trailing" constant="8" id="GOY-9S-7Wn"/>
+                    <constraint firstAttribute="bottom" secondItem="SvU-QG-CkZ" secondAttribute="bottom" constant="71.5" id="OXT-B6-PgS"/>
+                    <constraint firstAttribute="bottom" secondItem="jCd-Bx-vBp" secondAttribute="bottom" constant="22.5" id="PMK-X1-hOo"/>
+                    <constraint firstItem="lBG-Ru-wjL" firstAttribute="leading" secondItem="Rgp-kl-iMD" secondAttribute="trailing" constant="116" id="WVJ-vl-ROV"/>
+                    <constraint firstItem="Rgp-kl-iMD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="b76-zH-eYt"/>
+                    <constraint firstItem="SvU-QG-CkZ" firstAttribute="leading" secondItem="Rgp-kl-iMD" secondAttribute="trailing" constant="8" id="gyo-NR-qi6"/>
+                    <constraint firstItem="Rgp-kl-iMD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="iqM-Xy-VXt"/>
+                    <constraint firstItem="jCd-Bx-vBp" firstAttribute="top" secondItem="SvU-QG-CkZ" secondAttribute="bottom" constant="21.5" id="sQN-jO-Him"/>
+                    <constraint firstItem="lBG-Ru-wjL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="whw-9S-WGo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatarCollectionView" destination="Rgp-kl-iMD" id="5rB-RK-17Z"/>
+                <outlet property="bodyLabel" destination="jCd-Bx-vBp" id="6PH-Kh-1ov"/>
+                <outlet property="contentViewCell" destination="H2p-sc-9uM" id="Nkj-mE-Xro"/>
+                <outlet property="dateLabel" destination="lBG-Ru-wjL" id="eg2-DJ-bzd"/>
+                <outlet property="nameLabel" destination="SvU-QG-CkZ" id="EVV-iD-LjP"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="131.5"/>
+        </tableViewCell>
+    </objects>
+</document>
