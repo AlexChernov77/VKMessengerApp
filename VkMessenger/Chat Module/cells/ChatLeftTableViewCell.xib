@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGx-iW-8yy">
-                        <rect key="frame" x="10" y="16" width="260" height="101.5"/>
+                        <rect key="frame" x="10" y="17" width="260" height="111.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdhfjshdjkfdslkfjkdlsnvm,cxnvdrgnlkfmalksfnkdsv;dkprfndlgml;rgml;   mgfmgd;lfg,l; m;smfl;s mdfl;m sdf kmfdgmkdfgdfmlfvldfvbdfb" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Vx-dy-Xqq">
-                                <rect key="frame" x="10" y="5" width="245" height="91.5"/>
+                                <rect key="frame" x="10" y="5" width="245" height="101.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,9 +41,9 @@
                 <color key="backgroundColor" white="0.0" alpha="0.10269036091549295" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="gGx-iW-8yy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="BC2-MT-non"/>
-                    <constraint firstAttribute="bottom" secondItem="gGx-iW-8yy" secondAttribute="bottom" constant="16" id="IC8-VY-aTL"/>
+                    <constraint firstAttribute="bottom" secondItem="gGx-iW-8yy" secondAttribute="bottom" constant="5" id="IC8-VY-aTL"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gGx-iW-8yy" secondAttribute="trailing" constant="50" id="rla-XR-KXK"/>
-                    <constraint firstItem="gGx-iW-8yy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="uIq-ng-iO6"/>
+                    <constraint firstItem="gGx-iW-8yy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="uIq-ng-iO6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

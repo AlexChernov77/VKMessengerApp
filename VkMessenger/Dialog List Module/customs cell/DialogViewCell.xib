@@ -53,8 +53,8 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-Ru-wjL">
-                        <rect key="frame" x="212" y="4" width="24.5" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-Ru-wjL">
+                        <rect key="frame" x="196" y="4" width="119" height="12"/>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -65,9 +65,10 @@
                     <constraint firstAttribute="bottom" secondItem="Rgp-kl-iMD" secondAttribute="bottom" constant="10.5" id="7BH-lm-atm"/>
                     <constraint firstAttribute="trailing" secondItem="jCd-Bx-vBp" secondAttribute="trailing" constant="20" id="CXk-y7-sNd"/>
                     <constraint firstItem="jCd-Bx-vBp" firstAttribute="leading" secondItem="Rgp-kl-iMD" secondAttribute="trailing" constant="8" id="GOY-9S-7Wn"/>
+                    <constraint firstAttribute="trailing" secondItem="lBG-Ru-wjL" secondAttribute="trailing" constant="5" id="J6a-hD-27r"/>
                     <constraint firstAttribute="bottom" secondItem="SvU-QG-CkZ" secondAttribute="bottom" constant="71.5" id="OXT-B6-PgS"/>
                     <constraint firstAttribute="bottom" secondItem="jCd-Bx-vBp" secondAttribute="bottom" constant="22.5" id="PMK-X1-hOo"/>
-                    <constraint firstItem="lBG-Ru-wjL" firstAttribute="leading" secondItem="Rgp-kl-iMD" secondAttribute="trailing" constant="116" id="WVJ-vl-ROV"/>
+                    <constraint firstItem="lBG-Ru-wjL" firstAttribute="leading" secondItem="Rgp-kl-iMD" secondAttribute="trailing" constant="100" id="WVJ-vl-ROV"/>
                     <constraint firstItem="Rgp-kl-iMD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="b76-zH-eYt"/>
                     <constraint firstItem="SvU-QG-CkZ" firstAttribute="leading" secondItem="Rgp-kl-iMD" secondAttribute="trailing" constant="8" id="gyo-NR-qi6"/>
                     <constraint firstItem="Rgp-kl-iMD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="iqM-Xy-VXt"/>

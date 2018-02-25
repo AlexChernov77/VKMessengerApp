@@ -19,7 +19,7 @@ class ChatLeftTableViewCell: UITableViewCell {
         view.clipsToBounds = true
     }
     
-    func configureLeftBubble ( model: ChatModel)
+    func configureLeftBubble ( model: Chat)
     {
         messageLabel.text = model.body
     }

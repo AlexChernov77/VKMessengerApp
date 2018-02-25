@@ -21,10 +21,14 @@
 		96315AE7202CECED0054A597 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96315AE5202CECED0054A597 /* ChatTableViewCell.xib */; };
 		96315AEA202D9C8B0054A597 /* ChatLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96315AE8202D9C8B0054A597 /* ChatLeftTableViewCell.swift */; };
 		96315AEB202D9C8B0054A597 /* ChatLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96315AE9202D9C8B0054A597 /* ChatLeftTableViewCell.xib */; };
-		96315AEF202DAF310054A597 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96315AEE202DAF310054A597 /* ChatModel.swift */; };
+		96315B1D203469510054A597 /* SendMessageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96315B1C203469510054A597 /* SendMessageOperation.swift */; };
+		96315B2020346C480054A597 /* SendMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96315B1F20346C480054A597 /* SendMessageManager.swift */; };
+		96315B22203472510054A597 /* LongPollManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96315B21203472510054A597 /* LongPollManager.swift */; };
+		96315B2420349FCA0054A597 /* ConnectionLongPollManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96315B2320349FCA0054A597 /* ConnectionLongPollManager.swift */; };
 		967B61B0201615DC004CE696 /* OperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B61AF201615DC004CE696 /* OperationManager.swift */; };
 		967B61B220161681004CE696 /* GetDialogsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B61B120161681004CE696 /* GetDialogsOperation.swift */; };
 		967B61B420167C58004CE696 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B61B320167C58004CE696 /* Const.swift */; };
+		96858CE0203A371200FAF1D5 /* DataTransformManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96858CDF203A371200FAF1D5 /* DataTransformManager.swift */; };
 		968B91672026811500BD6EE8 /* DialogsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968B91602026811500BD6EE8 /* DialogsListPresenter.swift */; };
 		968B91682026811500BD6EE8 /* DialogsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968B91612026811500BD6EE8 /* DialogsListRouter.swift */; };
 		968B91692026811500BD6EE8 /* DialogListInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968B91622026811500BD6EE8 /* DialogListInterfaces.swift */; };
@@ -68,10 +72,14 @@
 		96315AE5202CECED0054A597 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		96315AE8202D9C8B0054A597 /* ChatLeftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLeftTableViewCell.swift; sourceTree = "<group>"; };
 		96315AE9202D9C8B0054A597 /* ChatLeftTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLeftTableViewCell.xib; sourceTree = "<group>"; };
-		96315AEE202DAF310054A597 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		96315B1C203469510054A597 /* SendMessageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageOperation.swift; sourceTree = "<group>"; };
+		96315B1F20346C480054A597 /* SendMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageManager.swift; sourceTree = "<group>"; };
+		96315B21203472510054A597 /* LongPollManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPollManager.swift; sourceTree = "<group>"; };
+		96315B2320349FCA0054A597 /* ConnectionLongPollManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionLongPollManager.swift; sourceTree = "<group>"; };
 		967B61AF201615DC004CE696 /* OperationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationManager.swift; sourceTree = "<group>"; };
 		967B61B120161681004CE696 /* GetDialogsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDialogsOperation.swift; sourceTree = "<group>"; };
 		967B61B320167C58004CE696 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		96858CDF203A371200FAF1D5 /* DataTransformManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransformManager.swift; sourceTree = "<group>"; };
 		968B91602026811500BD6EE8 /* DialogsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogsListPresenter.swift; sourceTree = "<group>"; };
 		968B91612026811500BD6EE8 /* DialogsListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogsListRouter.swift; sourceTree = "<group>"; };
 		968B91622026811500BD6EE8 /* DialogListInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogListInterfaces.swift; sourceTree = "<group>"; };
@@ -133,9 +141,9 @@
 		96102BC320265F2500612FFE /* Dialog List Module */ = {
 			isa = PBXGroup;
 			children = (
+				968B91632026811500BD6EE8 /* DialogsList.storyboard */,
 				96E21BAA2012A1AB0095AB90 /* customs cell */,
 				968B91622026811500BD6EE8 /* DialogListInterfaces.swift */,
-				968B91632026811500BD6EE8 /* DialogsList.storyboard */,
 				968B91642026811500BD6EE8 /* DialogsListInteractor.swift */,
 				968B91602026811500BD6EE8 /* DialogsListPresenter.swift */,
 				968B91612026811500BD6EE8 /* DialogsListRouter.swift */,
@@ -147,11 +155,11 @@
 		96102BD0202660D900612FFE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				967B61B320167C58004CE696 /* Const.swift */,
+				96315B1E20346BAC0054A597 /* Managers */,
 				967B61AE201615A8004CE696 /* operations */,
 				96102BD320266E5200612FFE /* system */,
-				967B61B320167C58004CE696 /* Const.swift */,
 				96E21B87200F63F50095AB90 /* internet */,
-				96E21BA32012A0210095AB90 /* view controllers */,
 				96E21B91200FDB610095AB90 /* DataModel */,
 			);
 			path = Common;
@@ -194,12 +202,27 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		96315B1E20346BAC0054A597 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				96E21B83200EA73F0095AB90 /* auth */,
+				967B61AF201615DC004CE696 /* OperationManager.swift */,
+				96E21B9A20121C160095AB90 /* DialogManager.swift */,
+				96315ADD202CC20B0054A597 /* ChatManager.swift */,
+				96315B1F20346C480054A597 /* SendMessageManager.swift */,
+				96315B21203472510054A597 /* LongPollManager.swift */,
+				96315B2320349FCA0054A597 /* ConnectionLongPollManager.swift */,
+				96858CDF203A371200FAF1D5 /* DataTransformManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		967B61AE201615A8004CE696 /* operations */ = {
 			isa = PBXGroup;
 			children = (
-				967B61AF201615DC004CE696 /* OperationManager.swift */,
 				967B61B120161681004CE696 /* GetDialogsOperation.swift */,
 				96315ADF202CC25A0054A597 /* GetChatOperation.swift */,
+				96315B1C203469510054A597 /* SendMessageOperation.swift */,
 			);
 			path = operations;
 			sourceTree = "<group>";
@@ -226,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				96102BD0202660D900612FFE /* Common */,
+				96E21BA92012A1250095AB90 /* AuthVC */,
 				96315AC4202B9EFB0054A597 /* Chat Module */,
 				96102BC320265F2500612FFE /* Dialog List Module */,
 				96E21B7D200EA3F50095AB90 /* Info.plist */,
@@ -244,11 +268,8 @@
 		96E21B87200F63F50095AB90 /* internet */ = {
 			isa = PBXGroup;
 			children = (
-				96E21B83200EA73F0095AB90 /* auth */,
 				96E21B88200F8D8E0095AB90 /* API_WRAPPER.swift */,
 				96E21B8B200FA31C0095AB90 /* API_Configure.swift */,
-				96E21B9A20121C160095AB90 /* DialogManager.swift */,
-				96315ADD202CC20B0054A597 /* ChatManager.swift */,
 			);
 			path = internet;
 			sourceTree = "<group>";
@@ -259,7 +280,6 @@
 				96E21B9C201227110095AB90 /* fabricCoreData */,
 				96E21B92200FDB960095AB90 /* CoreDataManager.swift */,
 				96E21B94200FDBDA0095AB90 /* VkMessenger.xcdatamodeld */,
-				96315AEE202DAF310054A597 /* ChatModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -272,14 +292,6 @@
 				96315AE1202CDE460054A597 /* ChatFabric.swift */,
 			);
 			path = fabricCoreData;
-			sourceTree = "<group>";
-		};
-		96E21BA32012A0210095AB90 /* view controllers */ = {
-			isa = PBXGroup;
-			children = (
-				96E21BA92012A1250095AB90 /* AuthVC */,
-			);
-			path = "view controllers";
 			sourceTree = "<group>";
 		};
 		96E21BA92012A1250095AB90 /* AuthVC */ = {
@@ -460,8 +472,10 @@
 				96E21B72200EA3F50095AB90 /* AppDelegate.swift in Sources */,
 				96315ADE202CC20B0054A597 /* ChatManager.swift in Sources */,
 				96315AD6202BA0380054A597 /* ChatPresenter.swift in Sources */,
+				96315B1D203469510054A597 /* SendMessageOperation.swift in Sources */,
 				96E21B8C200FA31C0095AB90 /* API_Configure.swift in Sources */,
 				96315AE2202CDE460054A597 /* ChatFabric.swift in Sources */,
+				96315B2020346C480054A597 /* SendMessageManager.swift in Sources */,
 				96E21B9B20121C160095AB90 /* DialogManager.swift in Sources */,
 				96E21B89200F8D8F0095AB90 /* API_WRAPPER.swift in Sources */,
 				96E21BA020126CA80095AB90 /* SingleChatFabric.swift in Sources */,
@@ -470,6 +484,7 @@
 				968B916B2026811500BD6EE8 /* DialogsListInteractor.swift in Sources */,
 				96315AD4202BA02C0054A597 /* ChatInteractor.swift in Sources */,
 				96315AD8202BA0450054A597 /* ChatRouter.swift in Sources */,
+				96858CE0203A371200FAF1D5 /* DataTransformManager.swift in Sources */,
 				967B61B220161681004CE696 /* GetDialogsOperation.swift in Sources */,
 				96102B5B201A7DFA00612FFE /* DateTransorm.swift in Sources */,
 				96315ADA202BA0570054A597 /* ChatInterfaces.swift in Sources */,
@@ -481,11 +496,12 @@
 				96E21BB22012ACB50095AB90 /* AvatarCollectionVC.swift in Sources */,
 				96E21BA2201283660095AB90 /* UsersFabrique.swift in Sources */,
 				96315ADC202BA0650054A597 /* ChatViewController.swift in Sources */,
-				96315AEF202DAF310054A597 /* ChatModel.swift in Sources */,
 				968B91692026811500BD6EE8 /* DialogListInterfaces.swift in Sources */,
 				96315AE6202CECED0054A597 /* ChatTableViewCell.swift in Sources */,
 				968B91672026811500BD6EE8 /* DialogsListPresenter.swift in Sources */,
+				96315B22203472510054A597 /* LongPollManager.swift in Sources */,
 				967B61B420167C58004CE696 /* Const.swift in Sources */,
+				96315B2420349FCA0054A597 /* ConnectionLongPollManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

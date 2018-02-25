@@ -10,6 +10,8 @@ import UIKit
 
 class ChatRouter: ChatRouterInterface
 {
+
+    
     let storyboard = UIStoryboard(name: "Chat", bundle: nil)
     
 
@@ -19,17 +21,17 @@ class ChatRouter: ChatRouterInterface
         
     }
     
-    func setUpModule(id : Int64) -> UIViewController
+    func setUpModule( dialog: Dialog) -> UIViewController
     {
         let chatViewController = storyboard.instantiateViewController(withIdentifier: "chatStoryboard") as! ChatViewController
-        print("Айдишник \(id)")
-        let presenter = ChatPresenter(peer_id: id)
+        let presenter = ChatPresenter(dialog: dialog)
         let interactor = ChatInteractor()
         
         chatViewController.presenter = presenter
 
         presenter.view = chatViewController
         presenter.interactor = interactor
+        presenter.viewFrc = chatViewController
 
         interactor.output = presenter
         return chatViewController

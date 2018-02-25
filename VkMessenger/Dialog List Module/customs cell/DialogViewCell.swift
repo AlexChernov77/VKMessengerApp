@@ -56,14 +56,11 @@ class DialogViewCell: UITableViewCell {
         {
             nameLabel.text = (dataSource as! [User])[0].name
         }
-        if modelDialog.body == ""
-        {
-            bodyLabel.text =   "Пересланное сообщение"
-        }
-        else
-        {
+        
+        
+            
              bodyLabel.text = modelDialog.body
-        }
+        
         
         if (modelDialog.unread == 0) && (modelDialog.out == 0)
         {
@@ -74,7 +71,7 @@ class DialogViewCell: UITableViewCell {
         {
             bodyLabel.backgroundColor = UIColor.groupTableViewBackground
         }
-        dateLabel.text = DateTransorm.dateTransform(timeInterval: Int(modelDialog.date))
+        dateLabel.text = DataTransformManager.dateTransform(date: modelDialog.date!)
         
         avatarCollectionView.reloadData()
         

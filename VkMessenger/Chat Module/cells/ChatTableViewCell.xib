@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-Xy-DyL">
-                        <rect key="frame" x="50" y="16" width="260" height="86"/>
+                        <rect key="frame" x="50" y="5" width="260" height="108.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будет ваше сообщениеываывавыавыаываыв аывавы ыв аывываываываыва ыв аыв аыв аыва ыв ааваываывавыааваываываывмсчм    ааываыв" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTs-F1-Jcu">
-                                <rect key="frame" x="5" y="5" width="245" height="76"/>
+                                <rect key="frame" x="5" y="5" width="245" height="98.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,8 +42,8 @@
                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="sxh-Xy-DyL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="Krf-yt-oHW"/>
-                    <constraint firstAttribute="bottom" secondItem="sxh-Xy-DyL" secondAttribute="bottom" constant="16" id="Pxo-Kc-i6U"/>
-                    <constraint firstItem="sxh-Xy-DyL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ha9-dI-ZhS"/>
+                    <constraint firstAttribute="bottom" secondItem="sxh-Xy-DyL" secondAttribute="bottom" constant="5" id="Pxo-Kc-i6U"/>
+                    <constraint firstItem="sxh-Xy-DyL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ha9-dI-ZhS"/>
                     <constraint firstAttribute="trailing" secondItem="sxh-Xy-DyL" secondAttribute="trailing" constant="10" id="uZs-Ux-1Za"/>
                 </constraints>
             </tableViewCellContentView>

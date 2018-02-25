@@ -44,7 +44,6 @@ class GetDialogsOperation: Operation
             var userArray = ""
             var usersArray = ""
             var use = ""
-
             for dialog in items
             {
                 let message = dialog["message"]
@@ -56,12 +55,13 @@ class GetDialogsOperation: Operation
                 let unread = message["read_state"].int64Value
                 let out = message["out"].int64Value
                 var body = message["body"].stringValue
+                let miniAvatar = message["photo_50"].stringValue
                 
                 if message["photo_100"] != nil
                 {
                     multichatURL = message["photo_100"].stringValue
                 }
-                let date = message["date"].int64Value
+                let date = message["date"].doubleValue
                 
                 if body == ""
                 {
@@ -140,7 +140,7 @@ class GetDialogsOperation: Operation
                             usersArray = "\(user)"
                             userArray += "\(user),"
 //                        print("картинка \(multichatURL)")
-                        self.setObject(id: usersArray, chatID: chatID, senderUserID: senderUserID, title: title, unread: unread, out: out, body: body, userID: usersArray, date: date, multiChatAvatar: multichatURL, context: backGroundContext)
+                        self.setObject(id: usersArray, chatID: chatID, senderUserID: senderUserID, title: title, unread: unread, out: out, body: body, userID: usersArray, date: date, multiChatAvatar: multichatURL, miniAvavar: miniAvatar, context: backGroundContext)
                         
                     }
 //                    if userArray != ""
@@ -156,7 +156,7 @@ class GetDialogsOperation: Operation
                          userArray += "\(senderUserID),"
                           use += "\(senderUserID),"
                     
-                    self.setObject(id: String(senderUserID), chatID: senderUserID, senderUserID: senderUserID, title: title, unread: unread, out: out, body: body, userID: String (senderUserID), date: date, multiChatAvatar: multichatURL, context: backGroundContext)
+                    self.setObject(id: String(senderUserID), chatID: senderUserID, senderUserID: senderUserID, title: title, unread: unread, out: out, body: body, userID: String (senderUserID), date: date, multiChatAvatar: multichatURL, miniAvavar: miniAvatar, context: backGroundContext)
                 }
             }
         if userArray != ""
@@ -168,7 +168,6 @@ class GetDialogsOperation: Operation
             if self.isCancelled
             {
                 self.success()
-                _ = semaphore.signal()
             }
             else
             {
@@ -176,6 +175,8 @@ class GetDialogsOperation: Operation
                 
                 self.success()
             }
+        _ = semaphore.signal()
+        
         }) { (error) in
             self.failure(error)
             _ = semaphore.signal()
@@ -184,11 +185,11 @@ class GetDialogsOperation: Operation
     }
     
     
-    func setObject (id: String, chatID: Int64 ,senderUserID: Int64, title: String, unread: Int64, out: Int64, body: String, userID: String, date: Int64, multiChatAvatar: String, context: NSManagedObjectContext)
+    func setObject (id: String, chatID: Int64 ,senderUserID: Int64, title: String, unread: Int64, out: Int64, body: String, userID: String, date: Double, multiChatAvatar: String, miniAvavar: String, context: NSManagedObjectContext)
     {
         
-        self.user = UsersFabrique.setUsers(id: id, avatarURL: "", name: "", context: context)
-        self.dialog = SingleChatFabric.setSingleChatDialog(id: chatID, senderUserID: senderUserID, title: title, unread: unread, out: out, body: body, userID: userID, date: date, multiChatAvatar: multiChatAvatar, context: context)
+        self.user = UsersFabrique.setUsers(id: id, avatarURL: "", name: "", miniAvatarURL: "", context: context)
+        self.dialog = SingleChatFabric.setSingleChatDialog(id: chatID, senderUserID: senderUserID, title: title, unread: unread, out: out, body: body, userID: userID, date: Date(timeIntervalSince1970: date), multiChatAvatar: multiChatAvatar, miniAvatar: miniAvavar, context: context)
         user?.addToDialogs(dialog!)
         dialog?.addToUsers(user!)
     }
@@ -204,8 +205,9 @@ class GetDialogsOperation: Operation
                     let name = user["first_name"].stringValue + " " + user["last_name"].stringValue
                     let userId = user["id"].int64Value
                     let avatarURL = user["photo_100"].stringValue
+                    let miniAvatarURL = user["photo_50"].stringValue
 //                print("массив3 \(userId)")
-             self.user = UsersFabrique.setUsers(id: String(userId), avatarURL: avatarURL, name: name, context: backgroundContext)
+                self.user = UsersFabrique.setUsers(id: String(userId), avatarURL: avatarURL, name: name, miniAvatarURL: miniAvatarURL, context: backgroundContext)
             }
             print("Сохранияем бекграундный контекст")
             semaphore.signal()

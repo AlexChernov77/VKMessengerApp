@@ -16,9 +16,9 @@ class DialogsListRouter: DialogsListRouterInterface {
     weak var rootModuleController: UIViewController?
     var chatRouter: ChatRouter = ChatRouter()
     
-    func showChat(id: Int64)
+    func showChat(dialog : Dialog)
     {
-        rootModuleController?.navigationController?.pushViewController(chatRouter.setUpModule(id: id), animated: true)
+        rootModuleController?.navigationController?.pushViewController(chatRouter.setUpModule(dialog: dialog), animated: true)
     }
     
     func setUpModule(fromViewController controller: UIViewController)
@@ -39,6 +39,7 @@ class DialogsListRouter: DialogsListRouterInterface {
         
         presenter.interactor = interactor
         interactor.output = presenter
+        presenter.viewFrc = initialController
         
         
         

@@ -10,7 +10,7 @@ import CoreData
 
 class UsersFabrique
 {
-    class func setUsers (id: String, avatarURL: String, name: String, context: NSManagedObjectContext ) -> User
+    class func setUsers (id: String, avatarURL: String, name: String, miniAvatarURL: String , context: NSManagedObjectContext ) -> User
     {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         let predicate = NSPredicate(format: "id=%@", id)
@@ -21,11 +21,12 @@ class UsersFabrique
         if fetchResults!.count == 0
         {
             let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
-            
+//            let users = User(context: context)
+//            users.id = 1
             user.id = id
             user.avatarURL = avatarURL
             user.name = name
-            
+            user.miniAvatarURL = miniAvatarURL
             return user
             
         }
@@ -35,7 +36,7 @@ class UsersFabrique
             
             user.avatarURL = avatarURL
             user.name = name
-            
+            user.miniAvatarURL = miniAvatarURL
             return user
         }
     }

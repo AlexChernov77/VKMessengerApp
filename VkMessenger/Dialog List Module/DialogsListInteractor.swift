@@ -9,10 +9,12 @@
 import Foundation
 
 class DialogsListInteractor: DialogsListInteractorInput {
+
+    
     
     weak var output: DialogsListInteractorOutput?
-    func getData() {
-        DialogManager.getDialog(count: 25, offset: 0, success: {
+    func getData(count: Int, offset: Int) {
+        DialogManager.getDialog(count: count, offset: offset, success: {
             self.output?.success()
         }) { (error) in
             self.output?.failure(error: error)

@@ -12,31 +12,25 @@ import Foundation
 class ChatInteractor: ChatInteractorInput
 {
 
-    var output: ChatInteractorOutput?
-    var idChatArray = NSArray()
-    var chats = NSMutableArray()
+    weak var output: ChatInteractorOutput?
     func getData(offset: Int, count: Int, peer_id: Int64)
     {
-        ChatManager.getDataChat(count: count, offset: offset, peer_id: peer_id, success: { array in
-            self.idChatArray = array
+        ChatManager.getDataChat(count: count, offset: offset, peer_id: peer_id, success: {
             CoreDataManager.sharedInstance.save()
             print("Главный контекст сохранен")
-            self.setChatModel()
-            self.output?.success(array: self.chats)
+                self.output?.success()
         }) { (error) in
             self.output?.failure(error: error)
         }
     }
     
-    func setChatModel()
+    func sendMessage(peer_id: Int64, random_id: Int, message: String)
     {
-        for chat in idChatArray
-        {
-            let model = ChatFabric.getChat(id: chat as! Int64, context: CoreDataManager.sharedInstance.getMainContext())
-            let chatModels = ChatModel(id: (model?.id)!, date: (model?.date)!, body: (model?.body)!, out: (model?.out)!, read_state: (model?.read_state)!)
-            
-            self.chats.add(chatModels)
+        SendMessageManager.sendMessage(peer_id: peer_id, message: message, random_id: random_id, success: {
+            CoreDataManager.sharedInstance.save()
+            self.output?.sendMessageSuccess()
+        }) { (error) in
+            self.output?.failure(error: error)
         }
     }
-
 }

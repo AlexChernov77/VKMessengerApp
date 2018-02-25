@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ChatTableViewCell: UITableViewCell {
+class ChatTableViewCell: UITableViewCell
+{
 
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var messageLabel: UILabel!
@@ -19,7 +20,7 @@ class ChatTableViewCell: UITableViewCell {
         view.clipsToBounds = true
     }
 
-    func configureRightBubble ( model: ChatModel)
+    func configureRightBubble ( model: Chat)
     {
        messageLabel.text = model.body
     }

@@ -47,6 +47,7 @@ class API_WRAPPER {
         let argsDictionary = NSMutableDictionary ()
         
         argsDictionary.setObject("\(count)", forKey: Const.URLConst.Arguments.kCount)
+        argsDictionary.setObject("\(offset)", forKey: Const.URLConst.Arguments.kOffset)
         argsDictionary.setObject(VKMAuthService.sharedInstance.getAccessToken(), forKey: Const.URLConst.Arguments.kAccessToken)
         
         let request = API_Configurator.createRequest(forBaseURL: Const.URLConst.kBaseURL, andMethod: Const.URLConst.Scripts.kMethodMessage, withParametrs: argsDictionary)
@@ -65,8 +66,7 @@ class API_WRAPPER {
         let agrsDictionary = NSMutableDictionary ()
         
         agrsDictionary.setObject("\(usersId)", forKey: Const.URLConst.Arguments.kUser)
-        agrsDictionary.setObject("photo_100", forKey: Const.URLConst.Arguments.kFields)
-//        agrsDictionary.setObject("photo_50", forKey: Const.URLConst.Arguments.kFields)
+        agrsDictionary.setObject("photo_100,photo_50", forKey: Const.URLConst.Arguments.kFields)
         agrsDictionary.setObject(VKMAuthService.sharedInstance.getAccessToken(), forKey: Const.URLConst.Arguments.kAccessToken)
         
         let request = API_Configurator.createRequest(forBaseURL: Const.URLConst.kBaseURL, andMethod: Const.URLConst.Scripts.kMethodUser, withParametrs: agrsDictionary)
@@ -97,5 +97,56 @@ class API_WRAPPER {
         dataTask.resume()
         return dataTask
     }
+    
+    
+    class func sendMessage ( peer_id: Int64, message: String, random_id: Int, success: @escaping (JSON) -> Void, failure: @escaping (Int) -> Void)
+    {
+        let agrsDictionary = NSMutableDictionary()
+        let encodeMessage = message.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+        
+        agrsDictionary.setObject("\(peer_id)" , forKey: Const.URLConst.Arguments.kPeer_id)
+        agrsDictionary.setObject(encodeMessage!, forKey: Const.URLConst.Arguments.kMessage)
+        agrsDictionary.setObject("\(random_id)", forKey: Const.URLConst.Arguments.kRandom_id)
+        agrsDictionary.setObject(VKMAuthService.sharedInstance.getAccessToken(), forKey: Const.URLConst.Arguments.kAccessToken)
+        
+        let request = API_Configurator.createRequest(forBaseURL: Const.URLConst.kBaseURL, andMethod: Const.URLConst.Scripts.kSendMessage, withParametrs: agrsDictionary)
+        
+        let dataTask = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+            completionHandler(withResponseData: data, response: response, error: error, successBlock: success, failureBlock: failure)
+        }
+        dataTask.resume()
+    }
+    
+    
+     class func getLongPollServer(success: @escaping (JSON) -> Void, failure: @escaping (Int) -> Void)
+     {
+        let agrsDictionary = NSMutableDictionary()
+        
+        agrsDictionary.setObject("1", forKey: "need_pts" as NSCopying )
+        agrsDictionary.setObject("2", forKey: "lp_version" as NSCopying)
+        agrsDictionary.setObject(VKMAuthService.sharedInstance.getAccessToken(), forKey: Const.URLConst.Arguments.kAccessToken)
+        
+        let request = API_Configurator.createRequest(forBaseURL: Const.URLConst.kBaseURL, andMethod: Const.URLConst.Scripts.kGetLongPoll, withParametrs: agrsDictionary)
+        
+        let dataTask = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+            completionHandler(withResponseData: data, response: response, error: error, successBlock: success, failureBlock: failure)
+        }
+        dataTask.resume()
+     }
+    
+    class func connectToLongPoll (server: String, key: String, ts: Int, success: @escaping (JSON) -> Void, failure: @escaping (Int) -> Void)
+    {
+        let url = "https://\(server)?act=a_check&key=\(key)&ts=\(ts)&wait=25&mode=2&version=2"
+        
+        let request = NSMutableURLRequest ()
+        request.httpMethod = "GET"
+        request.url = URL(string: url)
+        
+        let dataTask = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+            completionHandler(withResponseData: data, response: response, error: error, successBlock: success, failureBlock: failure)
+        }
+        dataTask.resume()
+    }
+    
 }
 

@@ -10,7 +10,7 @@ import CoreData
 
 class ChatFabric
 {
-    class func setChat ( id: Int64, idUser: Int64, date: Int64, body: String, out: Int64, read_state: Int64, context: NSManagedObjectContext)
+    class func setChat ( id: Int64, idUser: Int64, date: Date, body: String, out: Int64, read_state: Int64, context: NSManagedObjectContext) -> Chat
     {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Chat")
         let predicate = NSPredicate(format: "id=%lld", id)
@@ -29,7 +29,8 @@ class ChatFabric
             chat.out = out
             chat.read_state = read_state
             chat.idUser = idUser
-
+            
+            return chat
         }
         else
         {
@@ -40,18 +41,27 @@ class ChatFabric
             chat.out = out
             chat.read_state = read_state
 
+            return chat
         }
     }
-
-    class func getChat ( id : Int64 , context : NSManagedObjectContext ) -> Chat?
+    
+    
+    class func getChat(id: Int64, context: NSManagedObjectContext) -> Chat?
     {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Chat")
+        
+        //        let request: NSFetchRequest<Dialog> = Dialog.fetchRequest()
         let predicate = NSPredicate(format: "id=%lld", id)
         fetchRequest.predicate = predicate
-
-
         let fetchResults = try? context.fetch(fetchRequest) as! [Chat]
         
-        return fetchResults!.count == 0 ? nil : fetchResults![0]
+        if fetchResults!.count == 0
+        {
+            return nil
+        }
+        else
+        {
+            return fetchResults![0]
+        }
     }
 }

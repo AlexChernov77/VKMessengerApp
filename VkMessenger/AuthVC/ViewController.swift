@@ -24,19 +24,16 @@ class ViewController: UIViewController {
             {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)
                 {
-                    // self.performSegue(withIdentifier: "loginSuccess", sender: self)
+                    ConnectionLongPollManager.connectionLongPoll()
                     let navController = UINavigationController()
                     let router = DialogsListRouter()
                     navController.setViewControllers([router.setUpModule()], animated: false)
                     self.present(navController, animated: true, completion: nil)
                 }
             }
-            
-
-            
         }, failure: { [weak self] in
             
-            let alertController = UIAlertController(title: nil, message: "К сожалению, произошёл обоссамс автризации. Разработчик уволен", preferredStyle: .alert)
+            let alertController = UIAlertController(title: nil, message: "К сожалению, произошёл обоссамс авторизации. Разработчик уволен", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
             alertController.addAction(action)
             self?.present(alertController, animated: true, completion: nil)

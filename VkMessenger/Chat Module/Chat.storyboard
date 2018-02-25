@@ -18,27 +18,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hoi-WR-VRX">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hoi-WR-VRX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgv-0l-FmQ">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dV1-uG-NU4">
+                                        <rect key="frame" x="335" y="2" width="40" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <state key="normal" title="⌲"/>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="NhY-SX-ac5" eventType="touchUpInside" id="VFe-3K-lEc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VN-IB-Jyp">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="+"/>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Odv-hG-dwk">
+                                        <rect key="frame" x="40" y="0.0" width="295" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Odv-hG-dwk" secondAttribute="trailing" constant="40" id="1nx-sk-qC8"/>
+                                    <constraint firstAttribute="height" constant="40" id="9Hz-bF-ruR"/>
+                                    <constraint firstItem="dV1-uG-NU4" firstAttribute="top" secondItem="bgv-0l-FmQ" secondAttribute="top" constant="2" id="GLW-dz-soM"/>
+                                    <constraint firstItem="2VN-IB-Jyp" firstAttribute="leading" secondItem="bgv-0l-FmQ" secondAttribute="leading" id="M5h-Wi-co4"/>
+                                    <constraint firstItem="dV1-uG-NU4" firstAttribute="leading" secondItem="Odv-hG-dwk" secondAttribute="trailing" id="Md5-qr-kf8"/>
+                                    <constraint firstItem="Odv-hG-dwk" firstAttribute="top" secondItem="bgv-0l-FmQ" secondAttribute="top" id="WFC-kO-wFk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Odv-hG-dwk" secondAttribute="bottom" id="cK8-Uh-5Hc"/>
+                                    <constraint firstAttribute="bottom" secondItem="2VN-IB-Jyp" secondAttribute="bottom" id="eVw-Xn-7EN"/>
+                                    <constraint firstItem="2VN-IB-Jyp" firstAttribute="top" secondItem="bgv-0l-FmQ" secondAttribute="top" id="ecL-2Y-2pn"/>
+                                    <constraint firstAttribute="trailing" secondItem="dV1-uG-NU4" secondAttribute="trailing" id="gxZ-Hz-gch"/>
+                                    <constraint firstItem="Odv-hG-dwk" firstAttribute="leading" secondItem="2VN-IB-Jyp" secondAttribute="trailing" id="iDf-Pa-8jm"/>
+                                    <constraint firstAttribute="bottom" secondItem="dV1-uG-NU4" secondAttribute="bottom" id="kJk-Jl-Y0t"/>
+                                    <constraint firstItem="Odv-hG-dwk" firstAttribute="leading" secondItem="bgv-0l-FmQ" secondAttribute="leading" constant="40" id="nBc-wV-lG7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uDf-4V-g8K" firstAttribute="bottom" secondItem="Hoi-WR-VRX" secondAttribute="bottom" id="HDl-90-ARO"/>
-                            <constraint firstItem="Hoi-WR-VRX" firstAttribute="top" secondItem="uDf-4V-g8K" secondAttribute="top" id="SJ8-8X-jnb"/>
-                            <constraint firstItem="uDf-4V-g8K" firstAttribute="trailing" secondItem="Hoi-WR-VRX" secondAttribute="trailing" id="gPb-S1-5hN"/>
-                            <constraint firstItem="Hoi-WR-VRX" firstAttribute="leading" secondItem="uDf-4V-g8K" secondAttribute="leading" id="oMw-7z-WQq"/>
+                            <constraint firstItem="bgv-0l-FmQ" firstAttribute="leading" secondItem="uDf-4V-g8K" secondAttribute="leading" id="5Bf-XX-C7q"/>
+                            <constraint firstItem="Hoi-WR-VRX" firstAttribute="top" secondItem="uDf-4V-g8K" secondAttribute="top" id="Lrs-Pn-fRZ"/>
+                            <constraint firstItem="Hoi-WR-VRX" firstAttribute="leading" secondItem="bgv-0l-FmQ" secondAttribute="leading" id="R8q-HS-lXx"/>
+                            <constraint firstItem="uDf-4V-g8K" firstAttribute="trailing" secondItem="bgv-0l-FmQ" secondAttribute="trailing" id="XJS-Wl-07c"/>
+                            <constraint firstItem="Odv-hG-dwk" firstAttribute="top" secondItem="Hoi-WR-VRX" secondAttribute="bottom" id="YIg-sG-Z7z"/>
+                            <constraint firstItem="uDf-4V-g8K" firstAttribute="bottom" secondItem="bgv-0l-FmQ" secondAttribute="bottom" id="gmg-fb-Zfz"/>
+                            <constraint firstItem="Hoi-WR-VRX" firstAttribute="trailing" secondItem="bgv-0l-FmQ" secondAttribute="trailing" id="uC2-wa-xz5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uDf-4V-g8K"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Hoi-WR-VRX" id="jvH-VA-8HN"/>
+                        <outlet property="textField" destination="Odv-hG-dwk" id="tdW-NQ-e3o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BvT-mp-zf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="55"/>
+            <point key="canvasLocation" x="56.799999999999997" y="54.422788605697157"/>
         </scene>
     </scenes>
 </document>
